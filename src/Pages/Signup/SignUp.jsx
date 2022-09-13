@@ -61,7 +61,7 @@ export default function SignUp() {
             });
             const content = await rawResponse.json();
             console.log(content);
-            goto("/")
+            await goto("/")
         })();
     };
 
