@@ -97,7 +97,7 @@ export default function SignUp() {
                                     required
                                     fullWidth
                                     id="firstName"
-                                    label="First Name"
+                                    label="Name"
                                     autoFocus
                                 />
                             </Grid>
@@ -133,12 +133,7 @@ export default function SignUp() {
                                 />
                             </Grid>
                             <Grid item xs={12}>
-                                <FormControlLabel
-                                    control={
-                                        <Checkbox value="allowExtraEmails" color="primary" />
-                                    }
-                                    label="I want to receive inspiration, marketing promotions and updates via email."
-                                />
+
                             </Grid>
                         </Grid>
                         <Button
@@ -151,7 +146,7 @@ export default function SignUp() {
                         </Button>
                         <Grid container justifyContent="flex-end">
                             <Grid item>
-                                <Link href="#" variant="body2" >
+                                <Link href="#" variant="body2" onClick={() => goto("/login")} >
                                     Already have an account? Sign in
                                 </Link>
                             </Grid>
