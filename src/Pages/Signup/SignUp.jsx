@@ -12,6 +12,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
 
 function Copyright(props) {
     return (
@@ -34,6 +35,7 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignUp() {
+    let goto = useNavigate();
     const handleSubmit = async (event) => {
         event.preventDefault();
         const data = await new FormData(event.currentTarget);
@@ -58,8 +60,8 @@ export default function SignUp() {
                 body: JSON.stringify(formData),
             });
             const content = await rawResponse.json();
-
             console.log(content);
+            goto("/")
         })();
     };
 
@@ -149,7 +151,7 @@ export default function SignUp() {
                         </Button>
                         <Grid container justifyContent="flex-end">
                             <Grid item>
-                                <Link href="#" variant="body2">
+                                <Link href="#" variant="body2" >
                                     Already have an account? Sign in
                                 </Link>
                             </Grid>
